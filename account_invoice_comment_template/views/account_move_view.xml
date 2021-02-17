@@ -1,8 +1,8 @@
 <odoo>
-    <record model="ir.ui.view" id="invoice_form_add_comment">
-        <field name="name">account.invoice.form.comment</field>
-        <field name="model">account.invoice</field>
-        <field name="inherit_id" ref="account.invoice_form" />
+    <record model="ir.ui.view" id="move_form_add_comment">
+        <field name="name">account.move.form.comment</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form" />
         <field name="arch" type="xml">
             <xpath expr="/form/sheet/notebook" position="inside">
                 <page string="Comments" name="comments">
@@ -14,6 +14,7 @@
                             name="comment_template1_id"
                             string="Load a template"
                             context="{'default_position': 'before_lines'}"
+                            options="{'no_create': True, 'no_open': True}"
                         />
                         <field name="note1" nolabel="1" colspan="2" />
                     </group>
@@ -22,6 +23,7 @@
                             name="comment_template2_id"
                             string="Load a template"
                             context="{'default_position': 'after_lines'}"
+                            options="{'no_create': True, 'no_open': True}"
                         />
                         <field name="note2" nolabel="1" colspan="2" />
                     </group>
